@@ -1,0 +1,43 @@
+<html>
+<head>
+<title> 🤔 Guess A Number 🤔</title>
+</head>
+<body align="center" style="background-color: pink">
+<h1>Guess My Number</h1>
+<h3>Range of Numbers</h3>
+<pre>
+<h4>From 1 To 100</h4>
+<input type="button" value="Start" onclick="start()">
+</pre>
+<p id="demo"></p><br><br>
+<label>Enter the no:</label><br>
+<input  id="data" type="text"><br><br>
+<input type="button" name="submit" value="Guess" onclick="guess()">
+	<!-- JS code -->
+<script>
+var num,num1,count=0;
+	// Guess No. generating function
+function start()
+{
+ num = Math.floor(Math.random() * 100 + 1);
+ document.getElementById("demo").innerHTML="Please guess a number, enter it, and press Guess.";
+}
+	// Check the guessing function
+function guess()
+{	
+	  count++;
+	 num1=document.getElementById("data").value;
+if(Number(num) == Number(num1)){
+document.getElementById("demo").innerHTML="Your Guess is Correct.";
+alert("Well Done! It took you "+ count +" attempts to guess this number");
+}
+else if (Number(num) > Number(num1)) {
+document.getElementById("demo").innerHTML="Your Guess is greater then "+num1+".";
+}
+else if (Number(num) < Number(num1)) {
+document.getElementById("demo").innerHTML="Your Guess is less then "+num1+".";	
+}
+}
+</script>
+</body>
+</html>
